@@ -1,45 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable, Image } from 'react-native';
+import Loading from './src/components/Loading';
 
 export default function App() {
 
   const [name, setName] = useState('')
   const [lastname, setLastName] = useState('')
   const [result, setResult] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   return (
     <View style={styles.container}>
 
-      <Text style={{marginBottom: 20}}>Welcome {result}</Text>
+      <Image 
+        source={require('./assets/images/loginIcon.png')}
+        style={styles.loginIconStyle}/>
 
-      <Text style={{fontWeight:'bold'}}>Name</Text>
+      <Text style={styles.welcomeText}>WELCOME</Text>
+
+      <Text style={{fontWeight:'bold', color: 'white'}}>Enter Your Email</Text>
 
       <TextInput 
         style={styles.textInputStyle}
-        placeholder='Enter Your Name'
+        placeholder='Email'
+        inputMode='email'
         onChangeText={setName}
         value={name}
       />
 
-      <Text style={{fontWeight:'bold'}}>Last Name</Text>
+      <Text style={{fontWeight:'bold', color: 'white'}}>Enter Your Password</Text>
 
       <TextInput 
         style={styles.textInputStyle}
-        placeholder='Enter Your Last Name'
+        placeholder='Password'
+        secureTextEntry={true}
         onChangeText={setLastName}
         value={lastname}
       />
 
       <Pressable 
-      onPress={() => setResult(name + ' ' + lastname)}
+      onPress={() => setIsLoading(true)}
       style= {({pressed}) => [{
-        backgroundColor: pressed ? 'lightblue' : 'transparent'
+        backgroundColor: pressed ? 'lightblue' : 'khaki'
       },styles.buttonStyle]}>
-        <Text style={styles.buttonTextStyle}>Save</Text>
+        <Text style={styles.buttonTextStyle}>Login</Text>
       </Pressable>
 
-      <StatusBar style="auto" />
+      { isLoading ? <Loading changeIsLoading={() => setIsLoading(false)}/> : null}
+
     </View>
   );
 }
@@ -47,21 +55,30 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  welcomeText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 30,
+    marginBottom: 20
+  },
   textInputStyle: {
     borderWidth: 1,
+    borderColor: 'white',
     width: '80%',
     height: 50,
     marginVertical: 10,
     borderRadius: 50,
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white'
   },
   buttonStyle: {
     borderWidth:2,
+    borderColor: 'white',
     width: '80%',
     height: 50,
     borderRadius: 50,
@@ -70,6 +87,10 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   buttonTextStyle: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+  },
+  loginIconStyle: {
+    width: 200,
+    height: 100,
   }
 });
