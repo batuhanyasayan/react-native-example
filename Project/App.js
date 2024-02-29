@@ -18,7 +18,7 @@ export default function App() {
 
       <Text style={styles.welcomeText}>WELCOME</Text>
 
-      <Text style={{fontWeight:'bold', color: 'white'}}>Enter Your Email</Text>
+      <Text style={{fontWeight:'bold'}}>Enter Your Email</Text>
 
       <TextInput 
         style={styles.textInputStyle}
@@ -28,7 +28,7 @@ export default function App() {
         value={name}
       />
 
-      <Text style={{fontWeight:'bold', color: 'white'}}>Enter Your Password</Text>
+      <Text style={{fontWeight:'bold'}}>Enter Your Password</Text>
 
       <TextInput 
         style={styles.textInputStyle}
@@ -55,30 +55,26 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   welcomeText: {
-    color: 'white',
     fontWeight: 'bold',
     fontSize: 30,
     marginBottom: 20
   },
   textInputStyle: {
     borderWidth: 1,
-    borderColor: 'white',
     width: '80%',
     height: 50,
     marginVertical: 10,
     borderRadius: 50,
     textAlign: 'center',
     fontWeight: 'bold',
-    color: 'white'
   },
   buttonStyle: {
     borderWidth:2,
-    borderColor: 'white',
     width: '80%',
     height: 50,
     borderRadius: 50,

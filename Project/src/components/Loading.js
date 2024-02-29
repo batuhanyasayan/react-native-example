@@ -22,17 +22,16 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center'
     },
     loadingText: {
-        color: 'white',
         fontSize: 30,
         fontWeight: 'bold'
     },
     closeButton: {
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         width: 30,
         height: 30,
         borderRadius: 50,
@@ -44,6 +43,7 @@ const styles = StyleSheet.create({
     },
     closeButtonText: {
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'white'
     }
 })
