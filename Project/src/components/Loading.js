@@ -10,7 +10,6 @@ const Loading = (props) => {
             <Text style={styles.closeButtonText}>X</Text>
         </Pressable>
         <ActivityIndicator size={'large'} color={'khaki'}/>
-        <Text style={styles.loadingText}>Loading...</Text>
     </View>
   )
 }
@@ -26,24 +25,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    loadingText: {
-        fontSize: 30,
-        fontWeight: 'bold'
-    },
     closeButton: {
         backgroundColor: 'black',
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
         top: 55,
-        right: 30
+        right: 10
     },
     closeButtonText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'white'
+        fontSize: 15,
+        color: 'khaki'
     }
 })
