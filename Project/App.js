@@ -10,26 +10,33 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Name</Text>
+
+      <Text style={{marginBottom: 20}}>Welcome {result}</Text>
+
+      <Text style={{fontWeight:'bold'}}>Name</Text>
 
       <TextInput 
         style={styles.textInputStyle}
         placeholder='Enter Your Name'
         onChangeText={setName}
+        value={name}
       />
 
-      <Text>Last Name</Text>
+      <Text style={{fontWeight:'bold'}}>Last Name</Text>
 
       <TextInput 
         style={styles.textInputStyle}
         placeholder='Enter Your Last Name'
         onChangeText={setLastName}
+        value={lastname}
       />
 
-      <Pressable style= {({pressed}) => [{
-        backgroundColor: pressed ? 'gray' : 'lightblue'
+      <Pressable 
+      onPress={() => setResult(name + ' ' + lastname)}
+      style= {({pressed}) => [{
+        backgroundColor: pressed ? 'lightblue' : 'transparent'
       },styles.buttonStyle]}>
-        <Text>Save</Text>
+        <Text style={styles.buttonTextStyle}>Save</Text>
       </Pressable>
 
       <StatusBar style="auto" />
@@ -47,16 +54,22 @@ const styles = StyleSheet.create({
   textInputStyle: {
     borderWidth: 1,
     width: '80%',
-    height: 30,
+    height: 50,
     marginVertical: 10,
     borderRadius: 50,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: 'bold'
   },
   buttonStyle: {
-    width: '60%',
-    height: 30,
+    borderWidth:2,
+    width: '80%',
+    height: 50,
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10
+  },
+  buttonTextStyle: {
+    fontWeight: 'bold'
   }
 });
