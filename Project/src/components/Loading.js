@@ -9,7 +9,7 @@ const Loading = (props) => {
             style={styles.closeButton}>
             <Text style={styles.closeButtonText}>X</Text>
         </Pressable>
-        <ActivityIndicator size={'large'} color={'khaki'}/>
+        <ActivityIndicator size={'large'} color={'#9932cc'}/>
     </View>
   )
 }
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
     },
     closeButtonText: {
         fontSize: 15,
-        color: 'khaki'
+        color: '#9932cc'
     }
 })
