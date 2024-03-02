@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, View, Image, Linking } from 'react-native'
 import React, { useState } from 'react'
 import Loading from '../components/Loading'
 
@@ -28,6 +28,26 @@ const SignupPage = () => {
         <Text>Sign Up</Text>
       </Pressable>
 
+      <Text style={{marginTop: 20}}>or</Text>
+
+      <View style={styles.iconsStyle}>
+
+        <Pressable onPress = {() => {Linking.openURL('https://www.facebook.com/')}}>
+          <Image 
+            source={require('../../assets/images/facebook.png')} 
+            style={styles.facebookIcon}
+          />
+        </Pressable>
+
+        <Pressable onPress = {() => {Linking.openURL('https://www.google.com/')}}>
+          <Image 
+            source={require('../../assets/images/google.png')} 
+            style={styles.googleIcon}
+          />
+        </Pressable>
+
+      </View>
+      
       { isLoading ? <Loading changeIsLoading={() => setIsLoading(false)}/> : null}
 
 
@@ -72,5 +92,21 @@ const styles = StyleSheet.create({
     height: 40,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  facebookIcon: {
+    width: 50,
+    height: 50,
+    marginRight: 30
+  },
+  googleIcon: {
+    width: 50,
+    height: 50
+  },
+  iconsStyle: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30
   }
 })
