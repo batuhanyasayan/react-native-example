@@ -25,10 +25,10 @@ const SignupPage = () => {
         style= {({pressed}) => [{
             backgroundColor: pressed ? '#8a2be2' : '#9932cc'
         },styles.signupButton]}>
-        <Text>Sign Up</Text>
+        <Text style={{color: 'white', fontWeight: 'bold'}}>Sign Up</Text>
       </Pressable>
 
-      <Text style={{marginTop: 20}}>or</Text>
+      <Text style={{marginTop: 20}}>- or you can also -</Text>
 
       <View style={styles.iconsStyle}>
 
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: '80%',
     height: 50,
-    marginVertical: 10,
+    marginVertical: 5,
     textAlign: 'center'
   },
   signupButton: {
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 40,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 20
   },
   facebookIcon: {
     width: 50,

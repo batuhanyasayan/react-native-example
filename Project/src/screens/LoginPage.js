@@ -15,9 +15,6 @@ const LoginPage = ({navigation}) => {
         source={require('../../assets/images/loginIcon.jpg')}
         style={styles.loginIconStyle}/>
 
-
-      <Text style={{fontWeight:'bold'}}>Enter Your Email</Text>
-
       <TextInput 
         style={styles.textInputStyle}
         placeholder='Email'
@@ -25,8 +22,6 @@ const LoginPage = ({navigation}) => {
         onChangeText={setName}
         value={name}
       />
-
-      <Text style={{fontWeight:'bold'}}>Enter Your Password</Text>
 
       <TextInput 
         style={styles.textInputStyle}
@@ -79,14 +74,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: '80%',
     height: 50,
-    marginVertical: 10,
+    marginVertical: 5,
     borderRadius: 50,
     textAlign: 'center',
     fontWeight: 'bold',
   },
   buttonStyle: {
     width: '80%',
-    height: 50,
+    height: 40,
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
