@@ -1,9 +1,13 @@
 import { Pressable, StyleSheet, Text, TextInput, View, Image, Linking } from 'react-native'
 import React, { useState } from 'react'
 import Loading from '../components/Loading'
+import { CustomTextInput } from '../components'
 
 const SignupPage = ({navigation}) => {
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   return (
@@ -16,9 +20,26 @@ const SignupPage = ({navigation}) => {
 
       </View>
 
-      <TextInput style={styles.inputStyle} placeholder='Username' />
-      <TextInput style={styles.inputStyle} placeholder='Email' inputMode='email' />
-      <TextInput style={styles.inputStyle} placeholder='Password' secureTextEntry={true} />
+      <CustomTextInput
+        isSecureText = {false}
+        handleOnChangeText = {setEmail}
+        handleValue = {email}
+        handlePlaceholder = "Email"
+      />
+
+      <CustomTextInput
+        isSecureText = {true}
+        handleOnChangeText = {setPassword}
+        handleValue = {password}
+        handlePlaceholder = "Password"
+      />
+      
+      <CustomTextInput
+        isSecureText = {true}
+        handleOnChangeText = {setConfirmPassword}
+        handleValue = {confirmPassword}
+        handlePlaceholder = "Confirm Password"
+      />
 
       <Pressable
         onPress={() => setIsLoading(true)}
@@ -85,14 +106,6 @@ const styles = StyleSheet.create({
   secondText: {
     fontSize: 30,
     fontWeight: '500'
-  },
-  inputStyle: {
-    borderWidth: 1,
-    borderRadius: 50,
-    width: '80%',
-    height: 50,
-    marginVertical: 5,
-    textAlign: 'center'
   },
   signupButton: {
     borderRadius: 50,
